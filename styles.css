@@ -1,0 +1,131 @@
+/* Common styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 16px;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 16px 0;
+  background: linear-gradient(to right, #2E64DE, #3C8FE3, #987BE9, #BE6EAE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+h2 {
+  background: linear-gradient(to right, #2E64DE, #3C8FE3, #987BE9, #BE6EAE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #1557b0;
+}
+
+/* Popup styles */
+.popup-container {
+  width: 300px;
+  text-align: center;
+}
+
+/* Sidebar styles */
+.sidebar-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.summary-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary-content h2 {
+  font-size: 1.2rem;
+  margin: 0 0 12px 0;
+  color: #2c3e50;
+}
+
+.summary-content p {
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.source {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+}
+
+.source a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.source a:hover {
+  text-decoration: underline;
+}
+
+/* Loading spinner */
+.loading {
+  text-align: center;
+  padding: 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 12px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #1a73e8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error message */
+.error {
+  background-color: #fff3f3;
+  color: #dc3545;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.hidden {
+  display: none;
+} 
