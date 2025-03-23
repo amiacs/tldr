@@ -53,23 +53,15 @@ const restoreOptions = async () => {
     }
 
     if (result.openai_api_key) {
-      const maskedKey = maskApiKey(result.openai_api_key);
-      document.getElementById('openaiApiKey').value = maskedKey;
+      document.getElementById('openaiApiKey').value = result.openai_api_key;
     }
 
     if (result.gemini_api_key) {
-      const maskedKey = maskApiKey(result.gemini_api_key);
-      document.getElementById('geminiApiKey').value = maskedKey;
+      document.getElementById('geminiApiKey').value = result.gemini_api_key;
     }
   } catch (error) {
     console.error('Error loading options:', error);
   }
-};
-
-// Helper function to mask API keys
-const maskApiKey = (apiKey) => {
-  if (apiKey.length <= 8) return '••••••••';
-  return apiKey.substring(0, 4) + '••••••••' + apiKey.substring(apiKey.length - 4);
 };
 
 // Update active API key section based on model selection
