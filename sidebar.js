@@ -115,7 +115,7 @@ async function updateSummary() {
     const summary = await generateSummary(content);
     
     summaryElement.innerHTML = `
-      <h2>${content.title}</h2>
+      <h3>${content.title}</h3>
       <p>${summary}</p>
       <div class="source">
         <a href="${content.url}" target="_blank">View Original Page</a>
