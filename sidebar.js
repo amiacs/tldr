@@ -2,6 +2,17 @@
 const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
 const GEMINI_API_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
+async function updateModelInfo() {
+  const result = await chrome.storage.local.get(['selected_model']);
+  const modelInfo = document.getElementById('modelInfo');
+  
+  if (result.selected_model === 'openai') {
+    modelInfo.textContent = 'GPT-4o';
+  } else {
+    modelInfo.textContent = 'Gemini Flash 2.0';
+  }
+}
+
 async function getCurrentTab() {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   return tab;
@@ -124,5 +135,13 @@ async function updateSummary() {
 // Event listeners
 document.getElementById('refreshSummary').addEventListener('click', updateSummary);
 
-// Initial summary generation
+// Listen for changes in storage
+chrome.storage.onChanged.addListener((changes, namespace) => {
+  if (namespace === 'local' && changes.selected_model) {
+    updateModelInfo();
+  }
+});
+
+// Initial setup
+updateModelInfo();
 updateSummary(); 
